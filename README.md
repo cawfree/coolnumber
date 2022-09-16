@@ -14,7 +14,7 @@ yarn add coolnumber
 
 ## ✍️ usage
 
-It's super easy to use [`coolnumber`](https://github.com/cawfree/coolnumber), maybe even _too easy_, so please take care to specify the `max` and `min` values if used in a financial applications to prevent your users from getting rekt. If your value cannot be coerced to a coolnumber, it will be returned at the requested `precision`, which defaults to [`wei`](https://eth-converter.com/).
+It's super easy to use [`coolnumber`](https://github.com/cawfree/coolnumber), maybe even _too easy_, so please take care to specify the `max` and `min` values if used in a financial applications to prevent your users from getting rekt. If your value cannot be coerced to a coolnumber, it will be returned equal to the original input value but formatted to the requested `precision`, which defaults in [`wei`](https://eth-converter.com/).
 
 ```typescript
 import {coolnumber} from 'coolnumber';
