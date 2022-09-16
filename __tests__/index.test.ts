@@ -194,6 +194,14 @@ describe('coolnumber', () => {
         precision: 2,
       })
     ).toBe('1.69');
+    expect(
+      coolnumber({
+        value: '1',
+        min: '1',
+        coolNumbers: [1559],
+        precision: 3,
+      })
+    ).toBe('1.559');
   });
 });
 
