@@ -4,7 +4,7 @@ A way to safely give programmatically-generated decimal values a little flare! ð
 
 ## ðŸš€ getting started
 
-This package will coerce the digits of an input value to a user-friendly decimal value, whilst taking care not to exceed caller-defined bounds.
+This package will coerce the digits of an input value to the nearest user-friendly decimal value, whilst taking care not to exceed caller-defined bounds.
 
 You can download [__coolnumber__](https://npmjs.com/package/coolnumber) from [__npm__](https://npmjs.io):
 
