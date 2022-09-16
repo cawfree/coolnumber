@@ -1,6 +1,6 @@
 {
   "name": "coolnumber",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "😈 Coerce the digits of an input value to a user-friendly value, taking care not to exceed range.",
   "main": "dist",
   "repository": "https://github.com/cawfree/coolnumber",
