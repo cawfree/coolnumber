@@ -203,5 +203,16 @@ describe('coolnumber', () => {
       })
     ).toBe('15.59');
   });
+
+  it('bug:precision', () => {
+    expect(
+      coolnumber({
+        value: '0.12999999999',
+        min: '0.12420000001125',
+        max: '0.12999999999',
+        precision: 4,
+      })
+    ).toBe('0.1269');
+  });
 });
 

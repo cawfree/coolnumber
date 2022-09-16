@@ -84,10 +84,10 @@ export const minMaxCoolNumber = (
   let min: BigDecimal = e;
 
   while (!endsWithCoolNumber(max, coolNumber))
-    max = max.add(minDelta);
+    max = new BigDecimal(toDecimalsString(max.add(minDelta), precision));
 
   while (!endsWithCoolNumber(min, coolNumber))
-    min = min.subtract(minDelta);
+    min = new BigDecimal(toDecimalsString(min.subtract(minDelta), precision));
 
   return {min, max};
 };
@@ -102,21 +102,24 @@ export const filterValidRange = ({
   readonly range: readonly CoolNumberMinMax[];
 }) => {
 
+  const compareMax = !!maybeMax && new BigDecimal(maybeMax).getValue();
+  const compareMin = !!maybeMin && new BigDecimal(maybeMin).getValue();
+
   const max = range
     .map(({max}) => max)
     .filter((m) => {
-      if (!maybeMax) return true;
+      if (!compareMax) return true;
 
-      const r = BigDecimal.compareTo(new BigDecimal(maybeMax).getValue(), m.getValue());
+      const r = BigDecimal.compareTo(compareMax, m.getValue());
       return r === 0 || r === 1;
     });
 
   const min = range
     .map(({min}) => min)
     .filter((m) => {
-      if (!maybeMin) return true;
+      if (!compareMin) return true;
 
-      const r = BigDecimal.compareTo(new BigDecimal(maybeMin).getValue(), m.getValue());
+      const r = BigDecimal.compareTo(compareMin, m.getValue());
       return r === 0 || r === -1;
     });
 
