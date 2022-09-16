@@ -196,12 +196,12 @@ describe('coolnumber', () => {
     ).toBe('1.69');
     expect(
       coolnumber({
-        value: '1',
+        value: '15',
         min: '1',
         coolNumbers: [1559],
-        precision: 3,
+        precision: 2,
       })
-    ).toBe('1.559');
+    ).toBe('15.59');
   });
 });
 
