@@ -151,7 +151,7 @@ export const coolnumber = ({
   value: defaultValue,
   max,
   min,
-  precision = 4,
+  precision = DEFAULT_PRECISION,
   coolNumbers = DEFAULT_COOL_NUMBERS,
 }: {
   readonly value: BigDecimalish;

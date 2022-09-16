@@ -165,11 +165,11 @@ describe('coolnumber', () => {
 
   it('toCoolNumber', () => {
     expect(coolnumber({value: '1'}))
-      .toBe('0.9969');
+      .toBe('0.999999999999999969');
     expect(coolnumber({value: '1', min: '1'}))
-      .toBe('1.0069');
+      .toBe('1.000000000000000069');
     expect(coolnumber({value: '1', min: '1', max: '1'}))
-      .toBe('1.0000');
+      .toBe('1.000000000000000000');
     expect(coolnumber({value: '1', min: '1', max: '1', precision: 0}))
       .toBe('1');
     expect(coolnumber({value: '1', precision: 0}))
@@ -179,9 +179,9 @@ describe('coolnumber', () => {
     expect(coolnumber({value: '1', max: '68', precision: 0}))
       .toBe('-69');
     expect(coolnumber({value: '420'}))
-      .toBe('420.0000');
+      .toBe('420.000000000000000000');
     expect(coolnumber({value: '69'}))
-      .toBe('69.0000');
+      .toBe('69.000000000000000000');
   });
 
   it('readme', () => {
