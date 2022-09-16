@@ -147,7 +147,7 @@ export const pickClosestCoolNumber = ({
   return range[deltas.indexOf(sorted[0])];
 };
 
-export const toCoolNumber = ({
+export const coolnumber = ({
   value: defaultValue,
   max,
   min,

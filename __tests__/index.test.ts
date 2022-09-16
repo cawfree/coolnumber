@@ -12,7 +12,7 @@ import {
   minMaxCoolNumber,
   pickClosestCoolNumber,
   toDecimalsString,
-  toCoolNumber,
+  coolnumber,
 } from '../src';
 
 describe('coolnumber', () => {
@@ -164,24 +164,36 @@ describe('coolnumber', () => {
   });
 
   it('toCoolNumber', () => {
-    expect(toCoolNumber({value: '1'}))
+    expect(coolnumber({value: '1'}))
       .toBe('0.9969');
-    expect(toCoolNumber({value: '1', min: '1'}))
+    expect(coolnumber({value: '1', min: '1'}))
       .toBe('1.0069');
-    expect(toCoolNumber({value: '1', min: '1', max: '1'}))
+    expect(coolnumber({value: '1', min: '1', max: '1'}))
       .toBe('1.0000');
-    expect(toCoolNumber({value: '1', min: '1', max: '1', precision: 0}))
+    expect(coolnumber({value: '1', min: '1', max: '1', precision: 0}))
       .toBe('1');
-    expect(toCoolNumber({value: '1', precision: 0}))
+    expect(coolnumber({value: '1', precision: 0}))
       .toBe('69');
-    expect(toCoolNumber({value: '1', max: '69', precision: 0}))
+    expect(coolnumber({value: '1', max: '69', precision: 0}))
       .toBe('69');
-    expect(toCoolNumber({value: '1', max: '68', precision: 0}))
+    expect(coolnumber({value: '1', max: '68', precision: 0}))
       .toBe('-69');
-    expect(toCoolNumber({value: '420'}))
+    expect(coolnumber({value: '420'}))
       .toBe('420.0000');
-    expect(toCoolNumber({value: '69'}))
+    expect(coolnumber({value: '69'}))
       .toBe('69.0000');
+  });
+
+  it('readme', () => {
+    expect(
+      coolnumber({
+        min: '1',
+        max: undefined,
+        value: '1',
+        coolNumbers: [69, 420],
+        precision: 2,
+      })
+    ).toBe('1.69');
   });
 });
 
